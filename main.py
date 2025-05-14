@@ -42,7 +42,30 @@ print("Variance of Age: ", df["Age"].var())
 
 from scipy import stats
 
+#Generate a random sample from a normal distribution
+#sample = np.random.normal(loc=0, scale=1, size=1000)
 
-sample = np.random.normal(loc=0, scale=1, size=1000)
+#print("Mean: ", sample)
 
-print("Mean: ", sample)
+#Data Visualization
+
+import matplotlib.pyplot as plt
+
+data1 = { 
+   "Student": ["Alice", "Bob", "Charlie", "David", "Eve"],
+   "Math": [85, 96, 75, 86, 85],
+   "Science": [99, 87, 88, 92, 93],
+   "English": [89, 95, 78, 83, 90],
+   "Gender": ["Female", "Male", "Female", "Male", "Male"] 
+}
+
+df2 = pd.DataFrame(data1)
+
+print(df2)
+
+plt.figure(figsize=(10, 6))
+plt.plot(df2["Student"], df2["Math"], color="blue", label="Math")
+plt.plot(df2["Student"], df2["Science"], color="green", label="Science")
+plt.plot(df2["Student"], df2["English"], color="red", label="English")
+plt.legend()
+plt.show()
